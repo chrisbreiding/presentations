@@ -1,0 +1,523 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>AngularJS</title>
+
+    <link rel="stylesheet" href="css/reveal.min.css">
+    <link rel="stylesheet" href="css/theme/default.css">
+    <link rel="stylesheet" href="css/custom.css">
+
+    <!-- For syntax highlighting -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- If the query includes 'print-pdf', use the PDF print sheet -->
+    <script>
+        document.write( '<link rel="stylesheet" href="css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );
+    </script></head>
+
+<body>
+
+    <div class="reveal">
+
+        <div class="slides">
+
+            <section>
+                <div class="logo-box">
+                    <img src="images/AngularJS-large.png" alt="AngularJS">
+                </div>
+
+                <p>Chris Breiding</p>
+
+                <p>&nbsp;</p>
+
+                <p><small>(use arrow keys to navigate through slides)</small></p>
+            </section>
+
+            <section>
+                <h2>What is AngularJS?</h2>
+
+                <ul>
+                    <li class="fragment">MV* framework</li>
+                    <li class="fragment">Ideal for single page applications</li>
+                    <li class="fragment">"HTML Enhanced"</li>
+                </ul>
+
+                <aside class="notes">
+
+                </aside>
+            </section>
+
+            <section>
+                <h2>Features</h2>
+
+                <ul>
+                    <li>Templating</li>
+                    <li>Data binding</li>
+                    <li>Directives</li>
+                    <li>Services</li>
+                    <li>Dependency injection</li>
+                    <li>Filters</li>
+                    <li>Routing</li>
+                    <li>Testability</li>
+                </ul>
+
+            </section>
+
+            <section>
+                <h2>Templating</h2>
+
+                <pre><code contenteditable>
+    &lt;!DOCTYPE html&gt;
+    &lt;html ng-app="myApp"&gt;
+        &lt;head&gt;
+            ...
+        &lt;/head&gt;
+        &lt;body ng-controller="PageCtrl"&gt;
+
+            &lt;h1&gt;{{title}}&lt;/h1&gt;
+
+            &lt;p&gt;{{content}}&lt;/p&gt;
+
+        &lt;/body&gt;
+    &lt;/html&gt;
+                </code></pre>
+
+            </section>
+
+            <section>
+                <h2>Data Binding</h2>
+
+                <pre><code contenteditable>
+    var myApp = angular.module('myApp');
+
+    myApp.controller('PageCtrl', function ($scope) {
+
+        $scope.title = 'The Eleventh Hour';
+
+        $scope.content = "There's something you better understand about me, 'cause it's important and one day your life may depend on it. I am definitely a madman with a box!";
+
+    });
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Data Binding</h2>
+
+                <p><a href="demo/binding.html" target="_blank">View demo</a></p>
+
+                <pre><code contenteditable>
+    &lt;!DOCTYPE html&gt;
+    &lt;html ng-app&gt;
+        &lt;head&gt;
+            ...
+        &lt;/head&gt;
+        &lt;body&gt;
+
+            &lt;input ng-model="items" type="text" /&gt;
+
+            &lt;p&gt;{{items || 'Fezes'}} are cool!&lt;/p&gt;
+
+        &lt;/body&gt;
+    &lt;/html&gt;
+                </code></pre>
+
+            </section>
+
+            <section>
+                <h2>Directives</h2>
+
+                <p>"Teach HTML new tricks"</p>
+                <p>Add behavior to DOM elements with custom attributes</p>
+                <p>Create custom elements</p>
+
+                <p>&nbsp;</p>
+
+                <ul class="fragment">
+                    <li>ng-model</li>
+                    <li>ng-repeat</li>
+                    <li>ng-click</li>
+                    <li>ng-view</li>
+                    <li>ng-pluralize</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Directives in Action</h2>
+
+                <p><a href="demo/directive.html" target="_blank">View demo</a></p>
+
+                <pre><code contenteditable>
+    &lt;!DOCTYPE html&gt;
+    &lt;html ng-app="quoteApp"&gt;
+        &lt;head&gt;
+            ...
+        &lt;/head&gt;
+        &lt;body ng-controller="QuoteCtrl"&gt;
+            &lt;ul&gt;
+                &lt;li ng-repeat="quote in quotes"
+                    ng-class="{emphasize: quote.em}"
+                    ng-click="toggleEmphasis(quote)"&gt;
+                    "{{quote.text}}"
+                &lt;/li&gt;
+            &lt;/ul&gt;
+        &lt;/body&gt;
+    &lt;/html&gt;
+                </code></pre>
+
+            </section>
+
+            <section>
+                <h2>Directives in Action</h2>
+
+                <pre><code contenteditable>
+var quoteApp = angular.module('quoteApp', []);
+quoteApp.controller('QuoteCtrl', function ($scope) {
+    $scope.quotes = [
+        { em : false, text : "Never ignore a ..." },
+        { em : true,  text : "Bow ties are cool." },
+        { em : false, text : "It's a lot to take ..." },
+        { em : false, text : "First things first. You ..." }
+    ];
+
+    $scope.toggleEmphasis = function (quote) {
+        quote.em = !quote.em;
+    };
+});
+                </code></pre>
+
+            </section>
+
+            <section>
+                <h2>Directives - make your own!</h3>
+
+                <p>Attributes</p>
+                <pre><code contenteditable>
+
+        &lt;select chosen&gt;
+            &lt;option value="1"&gt;1&lt;/option&gt;
+            &lt;option value="2"&gt;2&lt;/option&gt;
+            &lt;option value="3"&gt;3&lt;/option&gt;
+        &lt;/select&gt;
+
+                </code></pre>
+
+                <small><a href="http://harvesthq.github.com/chosen/" target="_blank">Chosen site</a> | <a href="http://www.youtube.com/watch?v=8ozyXwLzFYs" target="_blank">Tutorial</a></small>
+
+            </section>
+
+            <section>
+                <h2>Directives - make your own!</h3>
+               <p>Elements</p>
+                <pre><code contenteditable>
+
+        &lt;markdown&gt;
+            # AngularJS
+
+            * Directives
+            * Services
+            * Filters
+        &lt;/markdown&gt;
+
+                </code></pre>
+
+                <small><a href="http://www.youtube.com/watch?v=A6wq16Ow5Ec" target="_blank">Tutorial Part 1</a> | <a href="http://www.youtube.com/watch?v=nKJDHnXaKTY" target="_blank">Tutorial Part 2</a></small>
+
+                <aside class="notes">
+                    Takeaway is that directives are used for DOM manipulation
+                </aside>
+
+            </section>
+
+            <section>
+                <h2>Services</h2>
+
+                <p>Injectable objects that carry out specific tasks</p>
+
+                <p>Provide a way to separate concerns and re-use code</p>
+
+                <p>&nbsp;</p>
+
+                <ul class="fragment">
+                    <li>$http</li>
+                    <li>$resource</li>
+                    <li>$locale</li>
+                    <li>$timeout</li>
+                    <li>$filter</li>
+                    <li>$routeProvider</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Dependency Injection</h2>
+
+                <p>services.js</p>
+
+                <pre><code contenteditable>
+angular.module('quoteServices', ['ngResource'])
+.factory('Quote', function ($resource) {
+    return $resource('/quotes/:id');
+});
+                </code></pre>
+
+                <p>quote_controller.js</p>
+
+                <pre><code contenteditable>
+var quoteApp = angular.module('quoteApp', ['quoteServices']);
+quoteApp.controller('QuoteCtrl', function ($scope, Quote) {
+    $scope.quotes = Quote.query();
+
+    $scope.toggleEmphasis = function (quote) {
+        quote.em = !quote.em;
+    };
+});
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Filters</h2>
+
+                <p>Used in template expressions to format the display of data</p>
+
+                <p>&nbsp;</p>
+
+                <ul class="fragment">
+                    <li>currency</li>
+                    <li>date</li>
+                    <li>json</li>
+                    <li>orderBy</li>
+                    <li>filter</li>
+                </ul>
+            </section>
+
+            <section>
+
+                <p>currency</p>
+
+                <p><a href="demo/currency.html" target="_blank">View demo</a></p>
+
+                <pre><code contenteditable>
+    &lt;input type="number" ng-model="amount"&gt;
+    &lt;p&gt;{{amount | currency}}&lt;/p&gt;
+                </code></pre>
+
+                <p>filter</p>
+
+                <p><a href="demo/filter.html" target="_blank">View demo</a></p>
+
+                <pre><code contenteditable>
+    &lt;input type="text" ng-model="query"&gt;
+    &lt;ul&gt;
+        &lt;li ng-repeat="item in items | filter:query"&gt;
+            {{item}}
+        &lt;/li&gt;
+    &lt;/ul&gt;
+                </code></pre>
+
+            </section>
+
+            <section>
+                <h2>Routing</h2>
+
+                <p><a href="demo/routing.html" target="_blank">View demo</a></p>
+
+                <pre><code contenteditable>
+    angular.module('quoteApp', [],
+        function($routeProvider) {
+            $routeProvider
+                .when('/', {
+                    templateUrl : 'views/index.html',
+                    controller : 'QuoteCtrl'
+                })
+                .when('/quote/:id', {
+                    templateUrl : 'views/show.html',
+                    controller : 'QuoteDetailCtrl'
+                })
+                .otherwise({ redirectTo : '/' });
+        }
+    );
+                </code></pre>
+
+            </section>
+
+            <section>
+                <h2>Testability</h2>
+
+                <ul>
+                    <li class="fragment">"Built to be testable"
+                        <ul>
+                            <li class="fragment">Dependency injection</li>
+                            <li class="fragment">Separation of concerns</li>
+                        </ul>
+                    </li>
+                    <li class="fragment">Mocks for unit tests</li>
+                    <li class="fragment">DSL for end-to-end tests</li>
+                </ul>
+
+                <ul>
+                    <li class="fragment">Resources provided are Jasmine-only</li>
+                    <li class="fragment">Developers favor Testacular</li>
+                </ul>
+
+            </section>
+
+            <section>
+                <h2>Unit Tests</h2>
+
+                <p>&nbsp;</p>
+
+                <p>quote_controller.js</p>
+
+                <pre><code contenteditable>
+var myApp = angular.module('myApp');
+
+myApp.controller('QuoteCtrl', function ($scope, $http) {
+    $http.get('/quotes').success(function(data) {
+        $scope.quotes = data;
+    });
+});
+                </code></pre>
+
+            </section>
+
+            <section>
+                <p>controller_spec.js</p>
+
+                <pre><code style="max-height: 600px; font-size: 16px;" contenteditable>
+describe('QuoteCtrl', function() {
+    var scope, ctrl, $httpBackend;
+
+    beforeEach(inject(function(_$httpBackend_, $rootScope, $controller) {
+        $httpBackend = _$httpBackend_;
+        $httpBackend.expectGET('/quotes')
+            .respond([{text: 'Four score...'}, {text: 'Ask not...'}]);
+        scope = $rootScope.$new();
+        ctrl = $controller('QuoteCtrl', {$scope: scope});
+    }));
+
+    it('creates a quotes model with 2 quotes fetched from xhr', function() {
+        expect(scope.quotes).toBeUndefined();
+        $httpBackend.flush();
+        expect(scope.quotes)
+            .toEqual([{text: 'Four score...'}, {text: 'Ask not...'}]);
+    });
+});
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>End-to-end Tests</h2>
+
+                <p><a href="demo/filter.html" target="_blank">Filter demo</a></p>
+
+                <pre><code style="max-height: 600px; font-size: 16px;" contenteditable>
+describe('Grocery list', function() {
+    beforeEach(function() {
+        browser().navigateTo('/');
+    });
+
+    it('filters the grocery list based on the search query', function() {
+        expect(repeater('.groceries li').count()).toBe(7);
+
+        input('query').enter('b');
+        expect(repeater('.groceries li').count()).toBe(2);
+
+        input('query').enter('cheese');
+        expect(repeater('.groceries li').count()).toBe(3);
+    });
+});
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Resources</h2>
+
+                <div class="fragment">
+                    <h3>Learning</h3>
+                    <ul>
+                        <li><a href="http://angularjs.org" target="_blank">angularjs.org</a></li>
+                        <li>YouTube
+                            <ul>
+                                <li><a href="http://www.youtube.com/user/johnlindquist?feature=watch" target="_blank">johnlindquist</a></li>
+                                <li><a href="http://www.youtube.com/user/simpulton" target="_blank">simpulton</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="fragment">
+                    <h3>Troubleshooting</h3>
+                    <ul>
+                        <li><a href="http://groups.google.com/group/angular" target="_blank">groups.google.com/group/angular</a></li>
+                        <li>IRC - #angularjs</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h2>Resources</h2>
+
+                <div>
+                    <h3>Useful Stuff</h3>
+                    <ul>
+                        <li><a href="http://angular-ui.github.com" target="_blank">angular-ui.github.com</a></li>
+                        <li><a href="http://github.com/angular/angular-seed" target="_blank">github.com/angular/angular-seed</a></li>
+                    </ul>
+                </div>
+
+            </section>
+
+            <section>
+                <h2>Why use AngularJS?</h2>
+
+                <ul>
+                    <li class="fragment">Reduces boilerplate</li>
+                    <li class="fragment">2-way data binding</li>
+                    <li class="fragment">Separation of concerns</li>
+                    <li class="fragment">Dependency injection</li>
+                    <li class="fragment">Full-featured</li>
+                    <li class="fragment">Extensible</li>
+                    <li class="fragment">Testable</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Thank You!</h2>
+            </section>
+
+        </div>
+
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.min.js"></script>
+
+    <script>
+
+        // Full list of configuration options available here:
+        // https://github.com/hakimel/reveal.js#configuration
+        Reveal.initialize({
+            controls: false,
+            progress: false,
+            history: true,
+            center: true,
+
+            transition: 'linear', // default/cube/page/concave/zoom/linear/none
+
+            dependencies: [
+                // { src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                // { src: 'plugin/markdown/showdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                // { src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                // { src: 'plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                { src: 'plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                // { src: 'plugin/remotes/remotes.js', async: true, condition: function() { return !!document.body.classList; } }
+            ]
+        });
+
+    </script>
+
+</body>
+</html>

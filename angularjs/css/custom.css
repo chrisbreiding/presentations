@@ -1,0 +1,54 @@
+
+body {
+    background: #2B2C35;
+}
+
+.reveal h2 {
+    color: #84B9C0;
+}
+
+.reveal h3 {
+    color: #CA6140;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 1.3em;
+}
+
+.reveal ol, .reveal ul {
+    margin-bottom: 1em;
+}
+
+.reveal ol ol, .reveal ul ul {
+    margin-bottom: 0;
+}
+
+.reveal pre {
+    width: 100%;
+}
+
+.reveal small {
+    font-size: .6em;
+}
+
+div.logo-box {
+    background: #EEE;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    margin: 0 auto 20px;
+    padding: 40px;
+    width: 383px;
+}
+
+input[type=text],
+input[type=number] {
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    font-size: .7em;
+    padding: 8px 12px;
+}
+
+.smaller-font {
+    font-size: .8em;
+}

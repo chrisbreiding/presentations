@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="quoteApp">
+<head>
+    <meta charset="utf-8" />
+    <title>Routing Demo</title>
+    <link rel="stylesheet" href="../lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/demo.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <ng-view></ng-view>
+
+    </div>
+
+    <script src="../lib/js/angular.min.js"></script>
+    <script>
+        angular.module('textFilters', [])
+        .filter('truncate', function () {
+            return function(text, length) {
+                length = Number(length);
+
+                if ( text.length > length) {
+                    text = text.substring(0, length) + '...';
+                }
+
+                return text;
+            };
+        });
+
+        var quoteApp = angular.module('quoteApp', ['textFilters'], function($routeProvider, $locationProvider) {
+            $routeProvider
+            .when('/', {
+                templateUrl : 'views/index.html',
+                controller : 'QuoteCtrl'
+            })
+            .when('/quote/:id', {
+                templateUrl : 'views/show.html',
+                controller : 'QuoteDetailCtrl'
+            })
+            .otherwise({ redirectTo : '/' });
+        });
+
+        var quotes = [
+            { em : false, text : "Never ignore a coincidence. Unless you're busy, in which case always ignore a coincidence.", img : 'images/coincidence.jpg' },
+            { em : true, text : "Bow ties are cool.", img : 'images/bowtie.jpg' },
+            { em : false, text : "It's a lot to take in, isn't it? Tiny box, huge room inside; what's that about? Let me explain...", img : 'images/sign.jpg' },
+            { em : false, text : "First things first. You got any jammy dodgers?", img : 'images/jammiedodger.jpg' }
+        ];
+
+        quoteApp.controller('QuoteCtrl', function ($scope) {
+            $scope.title = 'Quotes';
+            $scope.quotes = quotes;
+        });
+
+        quoteApp.controller('QuoteDetailCtrl', function ($scope, $routeParams) {
+            $scope.quote = quotes[$routeParams.id];
+        });
+
+    </script>
+
+</body>
+</html>

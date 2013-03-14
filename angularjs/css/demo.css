@@ -1,0 +1,35 @@
+body {
+    font-family: 'Georgia', serif;
+    font-size: 24px;
+}
+
+.container {
+    background: #f8f8f8;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: solid 1px #d3d3d3;
+    margin-top: 20px;
+    padding: 20px;
+    width: 600px;
+}
+
+.emphasize {
+    font-size: 1.2em;
+    font-style: italic;
+}
+
+li {
+    line-height: 2;
+}
+
+input.override {
+    font-size: 24px;
+    height: 24px;
+    line-height: 30px;
+    padding: 10px;
+}
+
+p {
+    line-height: 1.5;
+}

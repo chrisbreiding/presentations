@@ -1,0 +1,9 @@
+<h1>{{title}}</h1>
+
+<ul>
+    <li ng-repeat="quote in quotes">
+        <a href="#/quote/{{$index}}">
+            {{quote.text | truncate:40}}
+        </a>
+    </li>
+</ul>

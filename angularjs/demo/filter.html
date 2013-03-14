@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="filterDemo">
+<head>
+    <meta charset="utf-8" />
+    <title>Filter Demo</title>
+    <link rel="stylesheet" href="../lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/demo.css">
+</head>
+<body ng-controller="ItemCtrl">
+
+    <div class="container">
+
+        <p><input type="text" ng-model="query" class="override" /></p>
+
+        <ul>
+            <li ng-repeat="item in items | filter:query">
+                {{item}}
+            </li>
+        </ul>
+
+    </div>
+
+    <script src="../lib/js/angular.min.js"></script>
+    <script>
+        var filterDemo = angular.module('filterDemo', []);
+
+        filterDemo.controller('ItemCtrl', function ($scope) {
+            $scope.items = [
+                'eggs',
+                'cheddar cheese',
+                'milk',
+                'cottage cheese',
+                'butter',
+                'bread',
+                'cream cheese'
+            ];
+        });
+    </script>
+</body>
+</html>

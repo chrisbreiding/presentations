@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="directiveDemo">
+<head>
+    <meta charset="utf-8" />
+    <title>Directive Demo</title>
+    <link rel="stylesheet" href="../lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/demo.css">
+</head>
+<body ng-controller="QuoteCtrl">
+
+    <div class="container">
+
+        <ul>
+            <li ng-repeat="quote in quotes"
+                ng-class="{emphasize: quote.em}"
+                ng-click="toggleEmphasis(quote)">
+                "{{quote.text}}"
+            </li>
+        </ul>
+
+    </div>
+
+    <script src="../lib/js/angular.min.js"></script>
+    <script>
+        var directiveDemo = angular.module('directiveDemo', []);
+
+        directiveDemo.controller('QuoteCtrl', function ($scope) {
+            $scope.quotes = [
+                { em : false, text : "Never ignore a coincidence. Unless you're busy, in which case always ignore a coincidence." },
+                { em : true, text : "Bow ties are cool." },
+                { em : false, text : "It's a lot to take in, isn't it? Tiny box, huge room inside; what's that about? Let me explain..." },
+                { em : false, text : "First things first. You got any jammy dodgers?" }
+            ];
+
+            $scope.toggleEmphasis = function (quote) {
+                quote.em = !quote.em;
+            };
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" ng-app>
+<head>
+    <meta charset="utf-8" />
+    <title>Currency Demo</title>
+    <link rel="stylesheet" href="../lib/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/demo.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <p><input type="number" ng-model="amount" class="override" /></p>
+
+        <p>{{amount | currency}}</p>
+
+    </div>
+
+    <script src="../lib/js/angular.min.js"></script>
+</body>
+</html>

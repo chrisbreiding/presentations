@@ -94,7 +94,7 @@ https://github.com/substack/node-browserify
 
 - import dependencies using CommonJS style
 
-  * for 3rd party modules, use npm
+  * for 3rd party modules, install with npm
 
      -----------------------------------
     |ooo                                |
@@ -146,15 +146,15 @@ ___ __          __ __ __  __      __
 
 - examples:
 
-  - coffeeify : compile coffeescript
+  * coffeeify - compile coffeescript
 
-  - liveify   : compile livescript files
+  * liveify   - compile livescript
 
-  - hbsify    : pre-compile handlebars templates
+  * hbsify    - pre-compile handlebars templates
 
-  - deAMDify  : translate AMD modules
+  * deAMDify  - translate AMD modules
 
-  - ... and many more
+  * ... and many more
 
 
 
@@ -197,6 +197,7 @@ CONS
 
 - basically requires npm for 3rd party libs
 
+- poor documentation / lack of community
 
 
 
@@ -206,10 +207,9 @@ CONS
 
 
 
-
- __  __ __       __  __      __
-|__)|_ /  \/  \||__)|_     |(_
-| \ |__\_\/\__/|| \ |__  __)__)
+     __           __
+\  /(_    /\ |\/||  \
+ \/ __)  /--\|  ||__/
 
 
 - syntax
@@ -218,7 +218,7 @@ CONS
 
 - synchronous vs asynchronous
 
-- multiple files vs one file (possibly w/ source maps)
+- multiple files vs one file
 
 - compilation vs no/optional compilation
 

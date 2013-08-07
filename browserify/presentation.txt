@@ -94,7 +94,7 @@ https://github.com/substack/node-browserify
 
 - import dependencies using CommonJS style
 
-  - for third-party modules, use npm
+  * for 3rd party modules, use npm
 
      -----------------------------------
     |ooo                                |
@@ -105,7 +105,7 @@ https://github.com/substack/node-browserify
     |                                   |
      -----------------------------------
 
-  - for local modules, use relative path
+  * for local modules, use relative path
 
 - compile using browserify command
 
@@ -193,10 +193,9 @@ PROS
 
 CONS
 
-- bundles up everything into one file
+- bundles up everything into one file (mitigate with source maps)
 
 - basically requires npm for 3rd party libs
-
 
 
 
@@ -215,7 +214,7 @@ CONS
 
 - syntax
 
-- npm vs local libs
+- npm vs local 3rd party libs
 
 - synchronous vs asynchronous
 
@@ -229,4 +228,32 @@ CONS
 
 
 
-other alternatives (matrix comparison?)
+
+
+
+
+
+
+
+
+
+ __ ___     __ __         ___ __ __        ___      __ __
+/  \ | |__||_ |__)   /\ |  | |_ |__)|\ | /\ | |\  /|_ (_
+\__/ | |  ||__| \   /--\|__| |__| \ | \|/--\| | \/ |____)
+
+
+- almond.js
+
+- curl.js
+
+- yepnope.js
+
+- head.js
+
+- manually
+
+- build tools
+
+  * sprockets
+
+  * grunt

@@ -1,0 +1,212 @@
+
+
+
+
+
+    __                                      _ ____
+   / /_  _________ _      __________  _____(_) __/_  __
+  / __ \/ ___/ __ \ | /| / / ___/ _ \/ ___/ / /_/ / / /
+ / /_/ / /  / /_/ / |/ |/ (__  )  __/ /  / / __/ /_/ /
+/_.___/_/   \____/|__/|__/____/\___/_/  /_/_/  \__, /
+                                              /____/
+
+http://browserify.org
+https://github.com/substack/node-browserify
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     __  __     ___
+ /\ |__)/  \/  \ |
+/--\|__)\__/\__/ |
+
+
+
+
+- dependency management
+
+- uses CommonJS style, like node
+
+- utilizes npm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      _____             ___  __
+||\ |(_  |  /\ |  |   /\ | |/  \|\ |
+|| \|__) | /--\|__|__/--\| |\__/| \|
+
+
+- get npm (homebrew, nodejs.org, etc)
+
+- install node package
+
+   -----------------------------------
+  |ooo                                |
+  |-----------------------------------|
+  |                                   |
+  |$ npm install -g browserify        |
+  |                                   |
+  |                                   |
+  |                                   |
+  |                                   |
+   -----------------------------------
+
+
+
+
+
+
+
+
+
+
+
+     __ __
+/  \(_ |_
+\__/__)|__
+
+
+- import dependencies using CommonJS style
+
+- for third-party modules, use npm
+
+- for local modules, use relative path
+
+- compile using browserify command
+
+   -----------------------------------
+  |ooo                                |
+  |-----------------------------------|
+  |                                   |
+  |$ browserify main.js > bundle.js   |
+  |                                   |
+  |                                   |
+   -----------------------------------
+
+
+
+
+
+
+
+
+
+___ __          __ __ __  __      __
+ | |__) /\ |\ |(_ |_ /  \|__)|\/|(_
+ | | \ /--\| \|__)|  \__/| \ |  |__)
+
+
+- plugins that allow transforming files before browserifying them
+
+- examples:
+
+  - coffeeify : compile coffeescript
+
+  - liveify   : compile livescript files
+
+  - hbsify    : pre-compile handlebars templates
+
+  - deAMDify  : translate AMD modules
+
+  - ... and many more
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ __  __  __  __       __ __      __
+|__)|__)/  \(_    /  /  /  \|\ |(_
+|   | \ \__/__)  /   \__\__/| \|__)
+
+
+PROS
+
+- less "ceremony" to syntax
+
+- bundles up everything into one file
+
+- utilizes npm
+
+
+CONS
+
+- bundles up everything into one file
+
+- basically requires npm for 3rd party libs
+
+
+
+
+
+
+
+
+
+
+
+
+ __  __ __       __  __      __
+|__)|_ /  \/  \||__)|_     |(_
+| \ |__\_\/\__/|| \ |__  __)__)
+
+
+- syntax
+
+- npm vs local libs
+
+- synchronous vs asynchronous
+
+- multiple files vs one file (possibly w/ source maps)
+
+- compilation vs no/optional compilation
+
+
+
+
+
+
+
+other alternatives (matrix comparison?)

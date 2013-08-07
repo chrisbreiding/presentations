@@ -36,13 +36,13 @@ https://github.com/substack/node-browserify
 
 - dependency management
 
-- uses CommonJS style, like node
+- uses CommonJS style
+
+  * declare dependencies with require()
+
+  * export modules with module.exports or exports
 
 - utilizes npm
-
-
-
-
 
 
 
@@ -94,9 +94,18 @@ https://github.com/substack/node-browserify
 
 - import dependencies using CommonJS style
 
-- for third-party modules, use npm
+  - for third-party modules, use npm
 
-- for local modules, use relative path
+     -----------------------------------
+    |ooo                                |
+    |-----------------------------------|
+    |                                   |
+    |$ npm install underscore           |
+    |                                   |
+    |                                   |
+     -----------------------------------
+
+  - for local modules, use relative path
 
 - compile using browserify command
 
@@ -108,6 +117,17 @@ https://github.com/substack/node-browserify
   |                                   |
   |                                   |
    -----------------------------------
+
+- optionally use a watcher to compile on save
+
+
+
+
+
+
+
+
+
 
 
 

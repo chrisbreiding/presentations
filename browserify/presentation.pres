@@ -1,6 +1,7 @@
 
 
 
++=+
 
 
     __                                      _ ____
@@ -9,6 +10,7 @@
  / /_/ / /  / /_/ / |/ |/ (__  )  __/ /  / / __/ /_/ /
 /_.___/_/   \____/|__/|__/____/\___/_/  /_/_/  \__, /
                                               /____/
++=+
 
 http://browserify.org
 https://github.com/substack/node-browserify
@@ -24,14 +26,12 @@ https://github.com/substack/node-browserify
 
 
 
-
-
-
++=+
      __  __     ___
  /\ |__)/  \/  \ |
 /--\|__)\__/\__/ |
 
-
++=+
 
 
 - dependency management
@@ -56,11 +56,11 @@ https://github.com/substack/node-browserify
 
 
 
-
++=+
       _____             ___  __
 ||\ |(_  |  /\ |  |   /\ | |/  \|\ |
 || \|__) | /--\|__|__/--\| |\__/| \|
-
++=+
 
 - get npm (homebrew, nodejs.org, etc)
 
@@ -86,11 +86,11 @@ https://github.com/substack/node-browserify
 
 
 
-
++=+
      __ __
 /  \(_ |_
 \__/__)|__
-
++=+
 
 - import dependencies using CommonJS style
 
@@ -136,11 +136,11 @@ https://github.com/substack/node-browserify
 
 
 
-
++=+
 ___ __          __ __ __  __      __
  | |__) /\ |\ |(_ |_ /  \|__)|\/|(_
  | | \ /--\| \|__)|  \__/| \ |  |__)
-
++=+
 
 - plugins that allow transforming files before browserifying them
 
@@ -176,13 +176,13 @@ ___ __          __ __ __  __      __
 
 
 
-
++=+
  __  __  __  __       __ __      __
 |__)|__)/  \(_    /  /  /  \|\ |(_
 |   | \ \__/__)  /   \__\__/| \|__)
++=+
 
-
-PROS
+PROS ##
 
 - less "ceremony" to syntax
 
@@ -191,7 +191,7 @@ PROS
 - utilizes npm
 
 
-CONS
+CONS ##
 
 - bundles up everything into one file (mitigate with source maps)
 
@@ -206,11 +206,11 @@ CONS
 
 
 
-
++=+
      __           __
 \  /(_    /\ |\/||  \
  \/ __)  /--\|  ||__/
-
++=+
 
 - syntax
 
@@ -236,11 +236,11 @@ CONS
 
 
 
-
++=+
  __ ___     __ __         ___ __ __        ___      __ __
 /  \ | |__||_ |__)   /\ |  | |_ |__)|\ | /\ | |\  /|_ (_
 \__/ | |  ||__| \   /--\|__| |__| \ | \|/--\| | \/ |____)
-
++=+
 
 - almond.js
 

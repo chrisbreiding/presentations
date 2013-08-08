@@ -62,9 +62,9 @@ https://github.com/substack/node-browserify
 || \|__) | /--\|__|__/--\| |\__/| \|
 ##
 
-- get npm (homebrew, nodejs.org, etc)
+- get node (homebrew, nodejs.org, etc)
 
-- install node package
+- install node package globally
 
    -----------------------------------
   |ooo                                |

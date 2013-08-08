@@ -4,6 +4,9 @@
 ##
 
 
+
+
+
     __                                      _ ____
    / /_  _________ _      __________  _____(_) __/_  __
   / __ \/ ___/ __ \ | /| / / ___/ _ \/ ___/ / /_/ / / /
@@ -14,6 +17,12 @@
 
 http://browserify.org
 https://github.com/substack/node-browserify
+
+
+
+
+
+
 
 
 
@@ -56,6 +65,11 @@ https://github.com/substack/node-browserify
 
 
 
+
+
+
+
+
 ##
       _____             ___  __
 ||\ |(_  |  /\ |  |   /\ | |/  \|\ |
@@ -76,6 +90,14 @@ https://github.com/substack/node-browserify
   |                                   |
   |                                   |
    -----------------------------------
+
+
+
+
+
+
+
+
 
 
 
@@ -136,6 +158,7 @@ https://github.com/substack/node-browserify
 
 
 
+
 ##
 ___ __          __ __ __  __      __
  | |__) /\ |\ |(_ |_ /  \|__)|\/|(_
@@ -173,31 +196,82 @@ ___ __          __ __ __  __      __
 
 
 
-
-
-
 ##
- __  __  __  __       __ __      __
-|__)|__)/  \(_    /  /  /  \|\ |(_
-|   | \ \__/__)  /   \__\__/| \|__)
+ __  __  __  __
+|__)|__)/  \(_
+|   | \ \__/__)
 ##
 
-PROS ###
 
 - less "ceremony" to syntax
 
 - bundles up everything into one file
 
+  * closer to production environment
+
 - utilizes npm
 
+  * huge number of packages
 
-CONS ###
+  * keep 3rd party libs out of source control
 
-- bundles up everything into one file (mitigate with source maps)
+- great for node developers
 
-- basically requires npm for 3rd party libs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+##
+ __ __      __
+/  /  \|\ |(_
+\__\__/| \|__)
+##
+
+
+- bundles up everything into one file
+
+  * need build to use/test
+
+  * difficult to debug (mitigate with source maps)
+
+- requires npm for easy use of 3rd party libs
+
+  * shimming local libs is difficult
+
+  * need browser-specific lib (e.g. jquery-browserify)
+
+  * out-of-sync lib version
+
+    * may not be the latest
+
+    * package version usually differs from lib version
 
 - poor documentation / lack of community
+
+- only great for node developers?
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -221,6 +295,9 @@ CONS ###
 - multiple files vs one file
 
 - compilation vs no/optional compilation
+
+
+
 
 
 

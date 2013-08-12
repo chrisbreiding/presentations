@@ -243,7 +243,7 @@ ___ __          __ __ __  __      __
 
 - bundles up everything into one file
 
-  * need build to use/test
+  * need to build to use/test
 
   * difficult to debug (mitigate with source maps)
 
@@ -260,8 +260,6 @@ ___ __          __ __ __  __      __
     * package version usually differs from lib version
 
 - poor documentation / lack of community
-
-- only great for node developers?
 
 
 

@@ -1,12 +1,12 @@
 
 
 
+
+
+
+
+
 ##
-
-
-
-
-
     __                                      _ ____
    / /_  _________ _      __________  _____(_) __/_  __
   / __ \/ ___/ __ \ | /| / / ___/ _ \/ ___/ / /_/ / / /
@@ -78,7 +78,7 @@ https://github.com/substack/node-browserify
 
 - get node (homebrew, nodejs.org, etc)
 
-- install node package globally
+- install npm package globally
 
    -----------------------------------
   |ooo                                |
@@ -114,7 +114,7 @@ https://github.com/substack/node-browserify
 \__/__)|__
 ##
 
-- import dependencies using CommonJS style
+- import dependencies using CommonJS styles
 
   * for 3rd party modules, install with npm
 

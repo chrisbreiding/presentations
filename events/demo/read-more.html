@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Read More</title>
+
+  <style>
+    body {
+      background: #e3e3e3;
+      font-family: sans-serif;
+      font-size: 18px;
+      padding: 15px;
+    }
+
+    p {
+      margin: 10px auto;
+      width: 500px;
+    }
+
+    .extra-text {
+      display: none;
+    }
+
+    .read-more {
+      text-align: center;
+    }
+
+    a {
+      background: #334788;
+      border-radius: 3px;
+      display: inline-block;
+      color: #f8f8f8;
+      padding: 10px 15px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <p>Bacon ipsum dolor sit amet nostrud tenderloin quis ball tip, mollit duis salami adipisicing jerky ut. Chicken ham shank ham hock cupidatat drumstick sausage hamburger capicola meatball elit fugiat venison. Cupidatat nulla tenderloin aliqua t-bone. Ex jerky magna chicken, biltong tenderloin ad. Pastrami pig id sunt est porchetta. Tempor filet mignon anim rump landjaeger eu. Sirloin sunt drumstick landjaeger, irure ad ball tip excepteur.</p>
+
+  <p class="extra-text">Pancetta shank drumstick nulla tongue qui ullamco dolor. Shankle spare ribs biltong shoulder, ball tip irure swine sint excepteur voluptate turkey sunt corned beef pancetta cillum. Turducken ullamco labore beef ribs flank cillum bacon. Duis strip steak ball tip tempor laboris sed pastrami elit cupidatat do ut, non in beef. Consequat dolore ullamco ribeye eiusmod cow ham, veniam tenderloin meatloaf sint sed pork loin beef ribs. Do biltong mollit shoulder drumstick cupidatat laboris landjaeger venison bresaola.</p>
+
+  <p class="read-more">
+    <a href="#">Read More</a>
+  </p>
+
+  <script src="../lib/jquery.js"></script>
+  <script>
+    var more = false;
+
+    $('a').on('click', function (e) {
+      e.preventDefault();
+
+      more = !more;
+      $(this).text(more ? 'Read Less' : 'Read More');
+      $('.extra-text').slideToggle('fast');
+    });
+  </script>
+</body>
+</html>

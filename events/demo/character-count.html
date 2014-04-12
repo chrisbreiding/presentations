@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Character Count</title>
+
+  <style>
+    body {
+      background: #e3e3e3;
+      font-family: sans-serif;
+      font-size: 24px;
+      padding: 15px;
+    }
+
+    textarea {
+      border: solid 1px #c7c7c7;
+      border-radius: 3px;
+      display: block;
+      font-size: 24px;
+      line-height: 1.5;
+      margin: 20px auto;
+      width: 400px;
+      height: 200px;
+      padding: 15px;
+    }
+
+    p {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <textarea></textarea>
+  <p><span>0</span> characters</p>
+
+  <script src="../lib/jquery.js"></script>
+  <script>
+    $('textarea').on('keyup', function () {
+      var characterCount = $(this).val().length;
+      $('span').text(characterCount);
+    });
+  </script>
+</body>
+</html>

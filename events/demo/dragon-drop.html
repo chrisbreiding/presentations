@@ -6,13 +6,14 @@
 
   <style>
     body {
-      background: #545454 url('countryside.jpg') 100% 100px no-repeat;
+      background: #545454 url('images/countryside.jpg') 90% 100px no-repeat;
       font-family: sans-serif;
       font-size: 24px;
       padding: 15px;
     }
 
     img {
+      cursor: move;
       position: absolute;
       top: 100px;
       left: 100px;
@@ -21,36 +22,9 @@
 </head>
 <body>
 
-  <img src="trogdor.png" alt="Trogdor!">
+  <img src="images/trogdor.png" alt="Trogdor!">
 
   <script src="../lib/jquery.js"></script>
-  <script>
-    var dragging = false;
-    var offsetX;
-    var offsetY;
-    var img = $('img');
-
-    img.on('mousedown', function (e) {
-      dragging = true;
-
-      offsetX = e.pageX - $(this).position().left;
-      offsetY = e.pageY - $(this).position().top;
-    });
-
-    $('body').on('mousemove', function (e) {
-      if (dragging) {
-        e.preventDefault();
-
-        img.css({
-          top: e.pageY - offsetY,
-          left: e.pageX - offsetX
-        });
-      }
-    });
-
-    img.on('mouseup mouseout', function () {
-      dragging = false;
-    });
-  </script>
+  <script src="dragon-drop.js"></script>
 </body>
 </html>

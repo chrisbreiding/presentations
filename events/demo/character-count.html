@@ -12,14 +12,22 @@
       padding: 15px;
     }
 
+    div {
+      box-sizing: border-box;
+      float: left;
+      padding: 0 15px;
+      width: 33%;
+    }
+
     textarea {
       border: solid 1px #c7c7c7;
       border-radius: 3px;
+      box-sizing: border-box;
       display: block;
       font-size: 24px;
       line-height: 1.5;
       margin: 20px auto;
-      width: 400px;
+      width: 100%;
       height: 200px;
       padding: 15px;
     }
@@ -31,15 +39,20 @@
 </head>
 <body>
 
-  <textarea></textarea>
-  <p><span>0</span> characters</p>
+  <div>
+    <textarea></textarea>
+    <p><span>0</span> characters</p>
+  </div>
+  <div>
+    <textarea></textarea>
+    <p><span>0</span> characters</p>
+  </div>
+  <div>
+    <textarea></textarea>
+    <p><span>0</span> characters</p>
+  </div>
 
   <script src="../lib/jquery.js"></script>
-  <script>
-    $('textarea').on('keyup', function () {
-      var characterCount = $(this).val().length;
-      $('span').text(characterCount);
-    });
-  </script>
+  <script src="character-count.js"></script>
 </body>
 </html>

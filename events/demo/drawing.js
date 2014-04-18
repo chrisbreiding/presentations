@@ -1,7 +1,7 @@
 var canvas = $('canvas');
 var ctx = canvas[0].getContext('2d');
-ctx.fillStyle = ctx.strokeStyle = '#385E15';
-var drawing = false
+ctx.strokeStyle = '#385E15';
+var drawing = false;
 
 canvas.on('mousedown', function (e) {
   drawing = true;
@@ -17,7 +17,5 @@ canvas.on('mousemove', function (e) {
 });
 
 canvas.on('mouseup mouseout', function () {
-  ctx.closePath();
-  ctx.fill();
   drawing = false;
 });

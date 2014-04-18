@@ -1,6 +1,6 @@
-$('a').on('click', function (calamari) {
+$('a').on('click', function (e) {
 
-  calamari.preventDefault();
+  e.preventDefault();
 
   $('.extra-text').slideDown('fast');
   $(this).hide();

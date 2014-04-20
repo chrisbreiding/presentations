@@ -1,7 +1,9 @@
 $('textarea').on('keyup', function () {
 
-  var characterCount = $(this).val().length;
+  var currentTextarea = $(this);
 
-  $(this).siblings('p').find('span').text(characterCount);
+  var characterCount = currentTextarea.val().length;
+
+  currentTextarea.siblings('span').text(characterCount);
 
 });

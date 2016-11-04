@@ -6,7 +6,7 @@ Various presentations I've given at meetups.
 
 Originally presented November 19, 2012 at the Atlanta JavaScript meetup.
 
-[Slides](http://pres.crbdev.com/angularjs)
+[Slides](http://chrisbreiding.github.io/presentations/angularjs)
 
 [Demo code](https://github.com/chrisbreiding/presentations/tree/master/angularjs/demo)
 
